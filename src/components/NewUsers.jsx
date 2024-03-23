@@ -1,9 +1,11 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react';
 
 import { v4 as uuidv4 } from 'uuid';
+import { UserContext } from '../context/UsersContext';
 
+const NewUsers = () => {
+  const { setUsers } = useContext(UserContext);
 
-const NewUsers = ({ handleAddNewUser }) => {
   const [userName, setUserName] = useState('');
 
   const handleUserNameChange = event => {

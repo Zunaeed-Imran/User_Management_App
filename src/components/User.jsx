@@ -1,17 +1,27 @@
-import React from 'react'
+import React, { useContext } from 'react';
+import { UserContext } from '../context/UsersContext';
 
-const User = ({ user, handleDeleteUser }) => {
+const User = ({ user }) => {
+
+  const {users, setUsers} = useContext(UserContext)
   const { id, userName } = user;
+
+
+  const handleDelete = () => {
+    const filterUsers = users.filter(user => user.id !== id);
+    setUsers(filterUsers);
+  };
 
   return (
     <>
       <article>
-        <h2>{id}</h2>
-        <h3>{userName}</h3>
-        <button onClick={() => {
-          handleDeleteUser(id);
-        }}>Delete</button>
-        
+        <h2>{userName}</h2>
+        <h4>{id}</h4>
+        <button
+          onClick={handleDelete}
+        >
+          Delete
+        </button>
       </article>
     </>
   );
