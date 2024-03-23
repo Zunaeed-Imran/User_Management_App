@@ -4,17 +4,17 @@ import NewUsers from '../components/NewUsers';
 import { UserContext } from '../context/UsersContext';
 
 const Simple_App = () => {
-  const [users, setUSers] = useState([
+  const [users, setUsers] = useState([
     { id: 520, userName: 'Zunaeed Imran' },
     { id: 508, userName: 'Rakibul Islam' },
   ]);
 
   const handleAddNewUser = newuser => {
-    setUSers(prev => [...prev, newuser]);
+    setUsers(prev => [...prev, newuser]);
   };
 
   return (
-    <UserContext.Provider value={{ users, setUSers }}>
+    <UserContext.Provider value={{ users, setUsers }}>
       <div>
         <NewUsers />
         <Users />

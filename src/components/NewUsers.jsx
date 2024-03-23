@@ -16,7 +16,7 @@ const NewUsers = () => {
     event.preventDefault();
     const newUser = { id: uuidv4().toString(), userName: userName };
     handleAddNewUser(newUser);
-    setUserName('');
+    setUsers('');
   };
 
   return (
@@ -38,3 +38,4 @@ const NewUsers = () => {
 };
 
 export default NewUsers;
+
