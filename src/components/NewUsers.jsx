@@ -12,12 +12,14 @@ const NewUsers = () => {
     setUserName(event.target.value);
   };
 
+
   const handleSubmit = event => {
     event.preventDefault();
     const newUser = { id: uuidv4().toString(), userName: userName };
-    handleAddNewUser(newUser);
-    setUsers('');
-  };
+    setUsers(prevUsers => [...prevUsers, newUser]); // Update users state with the new user
+    setUserName('');
+    };
+
 
   return (
     <>
