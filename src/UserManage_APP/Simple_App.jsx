@@ -9,9 +9,9 @@ const Simple_App = () => {
     { id: 508, userName: 'Rakibul Islam' },
   ]);
 
-  const handleAddNewUser = newuser => {
-    setUsers(prev => [...prev, newuser]);
-  };
+  // const handleAddNewUser = newuser => {
+  //   setUsers(prev => [...prev, newuser]);
+  // };
 
   return (
     <UserContext.Provider value={{ users, setUsers }}>
